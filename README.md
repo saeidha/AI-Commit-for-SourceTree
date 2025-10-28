@@ -72,7 +72,7 @@ You'll get an output like `/Library/Frameworks/Python.framework/Versions/3.12/bi
 
 **Before:**
 ```bash
-PYTHON_PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin/python3"
+PYTHON_PATH=""
 ```
 
 **After (Example):**
