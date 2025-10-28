@@ -32,7 +32,7 @@ import requests
 import json
 
 # --- Configuration ---
-MODEL_NAME = "deepseek/deepseek-chat-v3.1:free"
+MODEL_NAME = "google/gemini-2.5-flash-lite-preview-09-2025"
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 API_KEY = os.environ.get("OPENROUTER_API_KEY")
 SYSTEM_PROMPT = """
