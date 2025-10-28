@@ -78,17 +78,11 @@ def get_commit_recommendation(diff_content):
         response = requests.post(OPENROUTER_API_URL, headers=headers, data=json.dumps(data), timeout=15)
         response_text = response.text # Store response text for error logging
         
-        # --- DEBUG PRINT ---
-        print(f"DEBUG: API Status Code: {response.status_code}", file=sys.stderr)
-        # --- END DEBUG ---
 
         response.raise_for_status() # Check for 4xx/5xx errors
 
         result = response.json()
         
-        # --- DEBUG PRINT ---
-        print(f"DEBUG: API JSON Response: {result}", file=sys.stderr)
-        # --- END DEBUG ---
 
         message_content = result['choices'][0]['message']['content']
         
@@ -97,7 +91,7 @@ def get_commit_recommendation(diff_content):
         
         # --- DEBUG PRINT ---
         if not cleaned_message:
-            print("DEBUG: API returned a message, but it was empty after stripping.", file=sys.stderr)
+            print("API returned a message, but it was empty after stripping.", file=sys.stderr)
         # --- END DEBUG ---
         
         return cleaned_message
@@ -134,7 +128,7 @@ if __name__ == "__main__":
 END_PYTHON
 
 # --- DEBUG: Check if Python script variable is loaded ---
-echo "DEBUG: Bash: PYTHON_SCRIPT variable length: ${#PYTHON_SCRIPT}"
+#echo "DEBUG: Bash: PYTHON_SCRIPT variable length: ${#PYTHON_SCRIPT}"
 # ----------------------------------------------------
 
 # --- 5. Run Python Script to Get Message ---
